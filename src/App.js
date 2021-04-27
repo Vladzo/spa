@@ -12,9 +12,9 @@ function App() {
 
     return (
         <div id="app">
-            <UserComponent name = {'Iron Man'} age = {40} img = {images[0]}/>
-            <UserComponent name = {'Deadpool'} age = {35} img = {images[1]}/>
-            <UserComponent name = {'Doctor Strange'} age = {39} img = {images[2]}/>
+            <UserComponent name = {'Iron Man'} age = {40} style = {{background: 'red'}} img = {images[0]}/>
+            <UserComponent name = {'Deadpool'} age = {35} style = {{background: 'blue'}} img = {images[1]}/>
+            <UserComponent name = {'Doctor Strange'} age = {39} style = {{background: 'yellow'}} img = {images[2]}/>
         </div>
     );
 }

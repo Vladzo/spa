@@ -2,7 +2,7 @@ import './user.style.css';
 
 function UserComponent(props) {
     return (
-        <div>
+        <div style={props.style}>
             <h2>{props.name}</h2>
             <img
                 src = {props.img}
