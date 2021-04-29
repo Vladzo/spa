@@ -1,12 +1,14 @@
 import './user.style.css';
 
 function UserComponent(props) {
+let {style, name, img} = props;
+
     return (
-        <div style={props.style}>
-            <h2>{props.name}</h2>
+        <div style={style}>
+            <h2>{name}</h2>
             <img
-                src = {props.img}
-                alt= {props.name}/>
+                src = {img}
+                alt= {name}/>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi autem, consectetur consequuntur cum
                 eaque earum facilis fugit impedit iusto neque nihil officiis recusandae reprehenderit, repudiandae rerum
                 suscipit tenetur voluptatem?</p>
