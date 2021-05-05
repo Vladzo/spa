@@ -1,6 +1,6 @@
-import './user.style.css';
+import './User.css';
 
-function UserComponent(props) {
+function User(props) {
 let {style, name, img} = props;
 
     return (
@@ -16,4 +16,4 @@ let {style, name, img} = props;
     );
 }
 
-export default UserComponent;
+export default User;
