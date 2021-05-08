@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import Post from "./Post";
 import './Posts.css'
+import {getPosts} from "../../services/api.service";
 
 export default function Posts() {
     let [posts, setPosts] = useState([]);
@@ -8,9 +9,7 @@ export default function Posts() {
     let [singlePost, setSinglePost] = useState(turn);
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/posts')
-            .then(response => response.json())
-            .then(json => setPosts([...json]));
+        getPosts().then(value => setPosts([...value.data]));
     }, []);
 
     const findSinglePost = (id) => {
