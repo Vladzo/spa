@@ -1,13 +1,17 @@
 import axios from 'axios';
 
 let instance = axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com',
+    baseURL: 'https://api.sampleapis.com/futurama/',
 });
 
-let getPosts = () => {
-    return instance.get('/posts');
+let getCharacters = () => {
+    return instance.get('/characters');
+}
+
+let getInventory = () => {
+    return instance.get('/inventory');
 }
 
 export {
-    getPosts,
+    getCharacters, getInventory
 }

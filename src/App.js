@@ -5,20 +5,22 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import Users from "./components/Users/Users";
-import Posts from "./components/Posts/Posts";
+import Inventory from "./components/Inventory/Inventory";
+import Characters from "./components/Characters/Characters";
+import CharacterDetails from "./components/Characters/CharacterDetails";
 
 function App() {
 
     return (
         <div id="app">
             <Router>
-                <Link to={'/users'}><h2>Users</h2></Link>
-                <Link to={'/posts'}><h2>Posts</h2></Link>
+                <Link to={'/characters'}><h2>Characters</h2></Link>
+                <Link to={'/inventory'}><h2>Inventory</h2></Link>
 
                 <Switch>
-                    <Route path={'/users'} render={() => <Users/>}/>
-                    <Route path={'/posts'} render={() => <Posts/>}/>
+                    <Route exact path={'/characters'} component = {Characters}/>
+                    <Route exact path={'/inventory'} render={() => <Inventory/>}/>
+                    <Route exact path={'/characters/details/:id'} component={CharacterDetails}/>
                 </Switch>
             </Router>
         </div>

@@ -1,6 +1,6 @@
-import './User.css';
+import './Inventory-item.css';
 
-function User(props) {
+function InventoryItem(props) {
 let {style, name, img} = props;
 
     return (
@@ -16,4 +16,4 @@ let {style, name, img} = props;
     );
 }
 
-export default User;
+export default InventoryItem;
