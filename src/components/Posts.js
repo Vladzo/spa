@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import Post from "./Post";
 
 export default function Posts() {
-    let [posts, setPosts] = useState([]);
+    const [posts, setPosts] = useState([]);
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then(response => response.json())
@@ -11,7 +11,7 @@ export default function Posts() {
     return (
         <div>
             {
-                posts.map((value, index) => <Post key={index} item={value}/> )
+                posts.map(value => <Post key={value.id} item={value}/> )
             }
         </div>
     );

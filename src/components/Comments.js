@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 
 export default function Comments({match: {params: {id}}}) {
-    let [comments, setComments] = useState([]);
+    const [comments, setComments] = useState([]);
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/comments?postId=' + id)
@@ -11,7 +11,7 @@ export default function Comments({match: {params: {id}}}) {
     return (
         <div>
             {
-                comments.map((value, index) => <div key={index}>
+                comments.map(value => <div key={value.id}>
                     Email: {value.email}<p>{value.body}</p><hr/></div>)
             }
         </div>

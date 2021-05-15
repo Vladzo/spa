@@ -3,7 +3,7 @@ import Post from "./Post";
 
 export default function UsersPosts({match: {params: {id}}}) {
 
-    let [posts, setPosts] = useState([]);
+    const [posts, setPosts] = useState([]);
 
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/posts?userId=${id}`)
@@ -14,7 +14,7 @@ export default function UsersPosts({match: {params: {id}}}) {
     return (
         <div>
             {
-                posts.map((value, index) => <Post key = {index} item={value}/>)
+                posts.map(value => <Post key = {value.id} item={value}/>)
             }
         </div>
     );
