@@ -6,19 +6,17 @@ import {
     Link
 } from "react-router-dom";
 import Users from "./components/Users/Users";
-import Posts from "./components/Posts/Posts";
+import UserDetails from "./components/Users/UserDetails";
 
 function App() {
 
     return (
         <div id="app">
             <Router>
-                <Link to={'/users'}><h2>Users</h2></Link>
-                <Link to={'/posts'}><h2>Posts</h2></Link>
-
+                <Link to={{pathname: '/users'}}><h2>Users</h2></Link>
+                <Route exact path={'/users/details'} component={UserDetails}/>
                 <Switch>
-                    <Route path={'/users'} render={() => <Users/>}/>
-                    <Route path={'/posts'} render={() => <Posts/>}/>
+                    <Route path={'/users'} component={Users}/>
                 </Switch>
             </Router>
         </div>
