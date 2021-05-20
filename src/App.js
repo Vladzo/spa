@@ -1,16 +1,13 @@
 import './App.css';
-import {Link, BrowserRouter, Route} from "react-router-dom";
-import Counter from "./components/Counter";
+//import {Link, BrowserRouter, Route} from "react-router-dom";
+import TODOLIST from "./components/TODOLIST";
 
 function App() {
 
     return (
-        <BrowserRouter>
             <div id="app">
-                <Link to='/counter'>Counter</Link>
-                <Route path={'/counter'} component={Counter}/>
+                <TODOLIST/>
             </div>
-        </BrowserRouter>
     );
 }
 

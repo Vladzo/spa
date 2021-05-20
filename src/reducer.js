@@ -1,24 +1,23 @@
-const initialState = {
-    counter: 0,
-};
+const initialState = [];
+let counter = 1;
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case "INC":
-            return {
+        case "ADD-ITEM":
+            return [
                 ...state,
-                counter: state.counter + 1
-            }
-        case "DEC":
+                {id: counter++, text: action.payload.text, completed: action.payload.completed},
+            ]
+        case "DELETE-ITEM":
             return {
                 ...state,
                 counter: state.counter - 1
             }
-        case "INC100":
-            return {
+        case "CHANGE-COMPETED":
+            return [
                 ...state,
-                counter: state.counter + 100
-            }
-        case "DEC100":
+                state[0] = state.find(val => val.id === action.payload.id).completed ? false : true,
+            ]
+        case "INCOMPLETE":
             return {
                 ...state,
                 counter: state.counter - 100
