@@ -4,8 +4,8 @@ import TODOITEM from "./TODOITEM";
 
 export default function TODOLIST() {
     const dispatch = useDispatch();
-    let [text, setText] = useState('');
-    let [completed, setComplete] = useState(false);
+    const [text, setText] = useState('');
+    const [completed, setComplete] = useState(false);
     const item = useSelector((state) => state);
 
     return (
@@ -16,7 +16,7 @@ export default function TODOLIST() {
             <div>
                 <button onClick={() => dispatch({type: "ADD-ITEM", payload: {text, completed}})}>Submit</button>
             </div>
-            {item.length ? item.map((val) => <TODOITEM key = {val.id} text={val.text} completed={val.completed} id={val.id}/>) : null}
+            {item.length && item.map((val) => <TODOITEM key = {val.id} text={val.text} completed={val.completed} id={val.id}/>)}
         </div>
     );
 }
