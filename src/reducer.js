@@ -8,19 +8,19 @@ const reducer = (state = initialState, action) => {
                 {id: counter++, text: action.payload.text, completed: action.payload.completed},
             ]
         case "CHANGE-COMPETED":
-            return {
-                // ...state,
-                // state[0] = state.find(val => val.id === action.payload.id).completed ? false : true,
-                // const someData = state.find(val => val.id === action.payload.id)
-                // someData
-                //     ? someData.completed = true
-                //     : someData.completed = false
-                // return [
-                //     ...state,
-                //     someData
-                // ]
+            const someData = state.find(val => val.id === action.payload.id)
+            someData.completed
+                ? someData.completed = false
+                : someData.completed = true
 
-            }
+                return [
+                    ...state
+                ]
+        case "DELETE-TODO-ITEM":
+            const state2 = state.filter(val => val.id !== action.payload.id);
+            return [
+                ...state2
+            ]
         default:
             return state;
     }

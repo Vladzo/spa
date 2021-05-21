@@ -3,7 +3,6 @@ import {useState} from "react";
 import TODOITEM from "./TODOITEM";
 
 export default function TODOLIST() {
-    const state = useSelector((state) => state);
     const dispatch = useDispatch();
     let [text, setText] = useState('');
     let [completed, setComplete] = useState(false);
