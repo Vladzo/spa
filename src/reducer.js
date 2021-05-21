@@ -7,20 +7,19 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 {id: counter++, text: action.payload.text, completed: action.payload.completed},
             ]
-        case "DELETE-ITEM":
-            return {
-                ...state,
-                counter: state.counter - 1
-            }
         case "CHANGE-COMPETED":
-            return [
-                ...state,
-                state[0] = state.find(val => val.id === action.payload.id).completed ? false : true,
-            ]
-        case "INCOMPLETE":
             return {
-                ...state,
-                counter: state.counter - 100
+                // ...state,
+                // state[0] = state.find(val => val.id === action.payload.id).completed ? false : true,
+                // const someData = state.find(val => val.id === action.payload.id)
+                // someData
+                //     ? someData.completed = true
+                //     : someData.completed = false
+                // return [
+                //     ...state,
+                //     someData
+                // ]
+
             }
         default:
             return state;
