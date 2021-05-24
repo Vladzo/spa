@@ -16,7 +16,7 @@ export default function TODOLIST() {
             <div>
                 <button onClick={() => dispatch({type: "ADD-ITEM", payload: {text, completed}})}>Submit</button>
             </div>
-            {item.length && item.map((val) => <TODOITEM key = {val.id} text={val.text} completed={val.completed} id={val.id}/>)}
+            {item.map((val) => <TODOITEM key = {val.id} text={val.text} completed={val.completed} id={val.id}/>)}
         </div>
     );
 }
